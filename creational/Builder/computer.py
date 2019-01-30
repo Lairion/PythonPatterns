@@ -9,11 +9,11 @@ class Computer:
 			builder.drive
 			)
 
-	def __init__(self,memory,proccesor,ram,drive):
+	def __init__(self,memory,proccesor,ram):
 		self.__memory = memory
 		self.__proccesor = proccesor
 		self.__ram = ram
-		self.__drive = drive
+		
 
 	def get_memory(self):
 		return self.__memory
@@ -24,6 +24,13 @@ class Computer:
 	def get_ram(self):
 		return self.__ram
 
-	def get_drive(self):
-		return self.__drive
+	
+
+	def __str__(self):
+		string = ("\n"+"-"*5+"\n")
+		return "Computer \'{ \n%s \n}\'" % (string.join([
+			str(self.get_memory()),
+			str(self.get_ram()),
+			str(self.get_processor())
+			]))
 
